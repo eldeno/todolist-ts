@@ -11,6 +11,15 @@
   align-items: flex-start;
 }
 
+.boderLessTodoContainer {
+  border: none;
+  box-sizing: border-box;
+}
+
+.todoContainer:hover {
+  cursor: pointer;
+}
+
 .descriptionContainer {
   display: flex;
   justify-content: flex-start;
@@ -19,6 +28,11 @@
 
 .descriptionText {
   color: var(--gray-100);  
+}
+
+.descriptionTextDone {
+  color: var(--gray-300);
+  text-decoration: line-through;
 }
 
 .checkbox {

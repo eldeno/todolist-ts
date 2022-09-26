@@ -22,6 +22,25 @@ const todoListArray = [
 export function TodoList() {
   const [todos, setTodos] = useState(todoListArray)
 
+  let isEmpty
+
+  if(todos.length === 0) {
+    isEmpty = true
+  } else {
+    isEmpty = false
+  }
+
+  function handleCompleteTask(id:number, done:boolean) {
+    const updatedTodos = todos.map(todo => {
+      if(todo.id === id) {
+        return {...todo, done: !done}
+      } else {
+        return todo
+      }
+    })
+    setTodos(updatedTodos)  
+  }
+
   return (
     <div className={styles.listContainer}>
       <div className={styles.listHeader}>
@@ -39,26 +58,27 @@ export function TodoList() {
         </p>
       </div>
       <div className={styles.listBody}>
-        <>
-          { 
-            todos.length === 0 &&
-            <div className={styles.emptyListMessage}>
+        {
+          isEmpty && 
+          <div className={styles.emptyListMessage}>
               <img src={clipboardImageIcon} />
               <p>Você ainda não tem tarefas cadastradas</p>
               <p>Crie tarefas e organize seus itens a fazer</p>
-            </div>
-          }
-          {
-            todos.map(todo => (
+          </div>
+        }
+        {
+          todos.map(({ id, description, done }) => {             
+            return (
               <Todo 
-                key={todo.id}
-                id={todo.id}
-                description={todo.description}
-                done={todo.done}
+                key={id}
+                id={id}
+                description={description}
+                done={done}
+                completeTask={() => handleCompleteTask(id, done)}
               />
-            ))
-          }    
-        </> 
+            )            
+          })
+        }    
       </div>
     </div>
   )
