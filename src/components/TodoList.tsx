@@ -41,6 +41,11 @@ export function TodoList() {
     setTodos(updatedTodos)  
   }
 
+  function handleDeleteTask(id:number) {
+    const updatedTodos = todos.filter(todo => todo.id !== id)
+    setTodos(updatedTodos)
+  }
+
   return (
     <div className={styles.listContainer}>
       <div className={styles.listHeader}>
@@ -75,6 +80,7 @@ export function TodoList() {
                 description={description}
                 done={done}
                 completeTask={() => handleCompleteTask(id, done)}
+                deleteTask={() => handleDeleteTask(id)}
               />
             )            
           })

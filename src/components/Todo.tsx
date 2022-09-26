@@ -6,12 +6,19 @@ interface TodoProps {
   description: string;
   done: boolean;
   completeTask: (id:number, done: boolean) => void;
+  deleteTask: (id: number) => void;
 }
 
-export function Todo({ description, id, done, completeTask}: TodoProps) {
+export function Todo(
+  { description, id, done, completeTask, deleteTask }: TodoProps
+  ) {
 
   function onCompleteTask(id: number, done: boolean) {
     completeTask(id, done)
+  }
+
+  function onDeleteTask(id: number) {
+    deleteTask(id)
   }
 
   return (
@@ -29,8 +36,8 @@ export function Todo({ description, id, done, completeTask}: TodoProps) {
           {description}
         </div>
       </div>
-      <div className={styles.deleteIcon}>
-        <Trash size={24} />
+      <div className={styles.deleteIcon} onClick={() => onDeleteTask(id)}>
+        <Trash size={16} />
       </div>    
     </div>
   )

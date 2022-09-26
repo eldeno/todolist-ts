@@ -53,3 +53,19 @@
 .checkboxDone svg {
   color: var(--gray-100);
 }
+
+.deleteIcon {
+  transition: all 0.2s;
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deleteIcon:hover {
+  background: var(--gray-400);
+  border-radius: 4px;
+  color: var(--red);  
+}
