@@ -19,6 +19,7 @@
   border-radius: 8px;
   padding: 16px;
   caret-color: var(--gray-100);
+  box-shadow: 0 3px 5px 1px var(--shadow);
 }
 
 .input::placeholder {
@@ -41,6 +42,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  box-shadow: 0 3px 5px 1px var(--shadow);
 }
 
 .submitButton svg {

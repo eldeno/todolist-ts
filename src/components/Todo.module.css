@@ -1,0 +1,41 @@
+.todoContainer {
+  background: var(--gray-500);
+  width: 100%;
+  height: 72px;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid var(--gray-400);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.descriptionContainer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.descriptionText {
+  color: var(--gray-100);  
+}
+
+.checkbox {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--purple-dark);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxDone {
+  background: var(--purple-dark);
+}
+
+.checkboxDone svg {
+  color: var(--gray-100);
+}

@@ -1,0 +1,83 @@
+.listContainer {
+  width: 736px;
+  color: var(--gray-300);
+  min-height: 287px;
+  margin: 0 auto;
+  margin-top: 64px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.listHeader {
+  width: 100%;
+  height: 43px;
+  font-weight: bold;
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+.tasksCreated {
+  color: var(--blue);
+
+  display: flex;
+  justify-content: center;
+}
+
+.tasksDone {
+  color: var(--purple);
+  
+  display: flex;
+  justify-content: center;
+}
+
+.headerTasksNumber {
+  background: var(--gray-300);
+  color: var(--gray-200);
+  width: 25px;
+  height: 19px;
+  border-radius: 100%;
+  font-size: 12px;
+  margin-left: 10px;
+  display: inline-block;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.listBody {
+  width: 100%;
+  height: 244px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.emptyListMessage {
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-400);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyListMessage > p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.emptyListMessage > p + p {
+  font-weight: normal;
+}
+
+.emptyListMessage > img {
+  margin-bottom: 16px;
+}

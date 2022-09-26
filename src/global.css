@@ -16,6 +16,8 @@
   --red: #E25858;
 
   --white: #FFFFFF;
+
+  --shadow: rgba(13, 13, 13, 0.7)
 }
 
 :focus {
@@ -36,4 +38,5 @@ body {
 
 body, button, input {
   font-size: 14px;
+  font-family: 'Inter', sans-serif;
 }
