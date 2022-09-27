@@ -1,6 +1,7 @@
 # TODO app
 
-Web application built with React for learning purposes. 
+Web application built with React and TypeScript for learning purposes.
+Connection with API to be added.
 
 ## Running locally
 
@@ -13,7 +14,7 @@ Clone this repo
 Inside project directory
 
 ```bash
-  cd my-project
+  cd todolist-ts
 ```
 
 Install the dependencies
