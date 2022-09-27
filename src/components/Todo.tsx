@@ -1,6 +1,8 @@
 import { Check, Trash } from 'phosphor-react';
 import styles from './Todo.module.css'
 
+const { todoContainer, borderLessTodoContainer, descriptionContainer, checkbox, checkboxDone, descriptionTextDone, descriptionText, deleteIcon } = styles
+
 interface TodoProps {
   id: number;
   description: string;
@@ -22,21 +24,21 @@ export function Todo(
   }
 
   return (
-    <div className={`${styles.todoContainer} ${done && styles.boderLessTodoContainer}`}>
-      <div className={styles.descriptionContainer}>
+    <div className={`${todoContainer} ${done && borderLessTodoContainer}`}>
+      <div className={descriptionContainer}>
         <div
-          className={`${styles.checkbox} ${done ? styles.checkboxDone : ''}`}
+          className={`${checkbox} ${done ? checkboxDone : ''}`}
           onClick={() => onCompleteTask(id, done)}
         >
           {
             done ? <Check size={18}/> : ''
           }        
         </div>
-        <div className={done ? styles.descriptionTextDone : styles.descriptionText}>
+        <div className={done ? descriptionTextDone : descriptionText}>
           {description}
         </div>
       </div>
-      <div className={styles.deleteIcon} onClick={() => onDeleteTask(id)}>
+      <div className={deleteIcon} onClick={() => onDeleteTask(id)}>
         <Trash size={16} />
       </div>    
     </div>

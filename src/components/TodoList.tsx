@@ -4,6 +4,8 @@ import { Todo } from '../components/Todo'
 
 import styles from './TodoList.module.css'
 
+const { listContainer, listHeader, tasksCreated, headerTasksNumber, tasksDone, listBody, emptyListMessage } = styles
+
 import clipboardImageIcon from '../assets/clipboard-image-icon.png'
 
 const todoListArray = [
@@ -69,29 +71,29 @@ export function TodoList() {
   }
 
   return (
-    <div className={styles.listContainer}>
-      <div className={styles.listHeader}>
-        <p className={styles.tasksCreated}>
+    <div className={listContainer}>
+      <div className={listHeader}>
+        <p className={tasksCreated}>
           Tarefas criadas
-          <span className={styles.headerTasksNumber}>
+          <span className={headerTasksNumber}>
             {
               todos.length
             }
           </span>
         </p>
-        <p className={styles.tasksDone}>
+        <p className={tasksDone}>
           Concluídas
-          <span className={styles.headerTasksNumber}>
+          <span className={headerTasksNumber}>
             {
               `${completedTasks.length} de ${todos.length}`
             }
           </span>
         </p>
       </div>
-      <div className={styles.listBody}>
+      <div className={listBody}>
         {
           isEmpty && 
-          <div className={styles.emptyListMessage}>
+          <div className={emptyListMessage}>
               <img src={clipboardImageIcon} />
               <p>Você ainda não tem tarefas cadastradas</p>
               <p>Crie tarefas e organize seus itens a fazer</p>
