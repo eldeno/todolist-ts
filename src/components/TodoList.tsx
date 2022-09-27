@@ -16,6 +16,26 @@ const todoListArray = [
     id: 2,
     description: 'Dar comida pra dog',
     done: false
+  },
+  {
+    id: 3,
+    description: 'Dar comida pra dog',
+    done: false
+  },
+  {
+    id: 4,
+    description: 'Dar comida pra dog',
+    done: false
+  },
+  {
+    id: 5,
+    description: 'Dar comida pra dog',
+    done: false
+  },
+  {
+    id: 6,
+    description: 'Dar comida pra dog',
+    done: false
   }
 ]
 
@@ -29,6 +49,8 @@ export function TodoList() {
   } else {
     isEmpty = false
   }
+
+  const completedTasks = todos.filter(todo => todo.done === true);
 
   function handleCompleteTask(id:number, done:boolean) {
     const updatedTodos = todos.map(todo => {
@@ -52,13 +74,17 @@ export function TodoList() {
         <p className={styles.tasksCreated}>
           Tarefas criadas
           <span className={styles.headerTasksNumber}>
-            0
+            {
+              todos.length
+            }
           </span>
         </p>
         <p className={styles.tasksDone}>
           Concluídas
           <span className={styles.headerTasksNumber}>
-            0
+            {
+              `${completedTasks.length} de ${todos.length}`
+            }
           </span>
         </p>
       </div>
